@@ -1,0 +1,107 @@
+// Footer Base Styles
+.web4jobs-footer {
+  background-color: #1e2a38; // Dark Blue background color (adjust to match your theme)
+  color: white;
+  padding: 30px 0; // Adequate spacing on top and bottom
+  font-family: 'Arial', sans-serif;
+
+  .footer-logo {
+    max-height: 30px;
+    margin-bottom: 10px;
+  }
+
+  .footer-slogan {
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: #ccc;
+  }
+
+  .footer-heading {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .footer-links {
+    padding-left: 0;
+    list-style: none;
+    font-size: 1rem;
+    color: #bbb;
+
+    // Flexbox for horizontal alignment of list items
+    display: flex;
+    justify-content: center;  // Center the items horizontally
+    gap: 15px; // Space between each link
+
+    li {
+      a {
+        color: #bbb;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .social-icons {
+    margin-top: 10px;
+
+    .social-icon {
+      color: #bbb;
+      font-size: 1.5rem;
+      margin-right: 15px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #00aaff; // Accent color on hover
+      }
+    }
+
+    .facebook:hover {
+      color: #3b5998;
+    }
+
+    .twitter:hover {
+      color: #1da1f2;
+    }
+
+    .linkedin:hover {
+      color: #0077b5;
+    }
+  }
+
+  .social-icon i {
+    font-size: 1.5rem;
+  }
+
+  // Bottom copyright section
+  .row.mt-4 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    .web4jobs-footer {
+      padding: 20px 10px;
+    }
+    .footer-heading {
+      font-size: 1rem;
+    }
+    .footer-slogan {
+      font-size: 1rem;
+    }
+
+    // Adjust the horizontal layout of footer links for smaller screens
+    .footer-links {
+      flex-direction: column;  // Stack vertically on smaller screens
+      gap: 10px;
+    }
+  }
+}

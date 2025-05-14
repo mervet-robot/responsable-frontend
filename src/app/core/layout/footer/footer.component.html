@@ -1,1 +1,32 @@
-<p>footer works!</p>
+<footer *ngIf="isLoggedIn" class="web4jobs-footer">
+  <div class="container">
+    <div class="row">
+      <!-- Column 1: Logo/Brand Name -->
+      <div class="col-md-4 text-center text-md-left">
+        <img src="assets/images/logo.png" alt="WEB4JOBS Logo" class="footer-logo">
+        <p class="footer-slogan">Your pathway to success!</p>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="col-md-4 text-center">
+        <h5 class="footer-heading">Quick Links</h5>
+        <ul class="footer-links list-unstyled">
+          <li><a >About Us</a></li>
+          <li><a >Contact</a></li>
+          <li><a >Terms & Conditions</a></li>
+          <li><a >Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Social Media Links -->
+
+    </div>
+
+    <!-- Bottom Section with Copyright -->
+    <div class="row mt-4">
+      <div class="col text-center">
+        <span>&copy; 2025 WEB4JOBS Portfolio. All rights reserved.</span>
+      </div>
+    </div>
+  </div>
+</footer>

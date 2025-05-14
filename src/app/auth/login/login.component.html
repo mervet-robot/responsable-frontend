@@ -9,7 +9,9 @@
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Username</mat-label>
             <input matInput formControlName="username" required>
-            <mat-error *ngIf="loginForm.get('username')?.errors?.['required']">Username is required</mat-error>
+            <mat-error *ngIf="loginForm.get('username')?.errors?.['required']">
+              Username is required
+            </mat-error>
           </mat-form-field>
         </div>
 
@@ -17,12 +19,22 @@
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Password</mat-label>
             <input matInput type="password" formControlName="password" required>
-            <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</mat-error>
+            <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">
+              Password is required
+            </mat-error>
           </mat-form-field>
         </div>
 
         <div class="alert alert-danger" *ngIf="isLoginFailed">
-          {{ errorMessage }}
+          {{ errorMessage || unauthorizedRoleMessage }}
+          <div *ngIf="isNotRegistered">
+            <a routerLink="/register" class="register-link">Click here to register</a>
+          </div>
+        </div>
+
+        <div class="alert alert-success" *ngIf="showRoleMessage && !isLoginFailed"
+             [ngClass]="{'alert-info': roles[0] === 'APPRENANT'}">
+          {{ successMessage }}
         </div>
 
         <div class="form-group">

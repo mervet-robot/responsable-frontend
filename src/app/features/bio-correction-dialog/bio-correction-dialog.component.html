@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Bio Correction Preview</h2>
+<mat-dialog-content>
+  <p><strong>Your Original Bio:</strong></p>
+  <mat-card class="original-bio">{{ data.original }}</mat-card>
+
+  <p><strong>Suggested Correction:</strong></p>
+  <mat-card class="corrected-bio highlight">{{ data.corrected }}</mat-card>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="apply()">Apply Correction</button>
+</mat-dialog-actions>
+
+
+<!--
+ <p><strong>Suggested Correction:</strong></p>
+<mat-card class="corrected-bio highlight" [innerHTML]="highlightDiffs(data.original, data.corrected)"></mat-card>
+-->

@@ -1,0 +1,437 @@
+.wizard-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.step-content {
+  padding: 1rem;
+}
+
+.profile-picture-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #eee;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-field {
+  flex: 1;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.mat-card-actions {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* Formations specific styles */
+.section-header {
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.formation-card {
+  margin-bottom: 1rem;
+}
+
+.formation-card mat-card-header {
+  align-items: center;
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .formation-card mat-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .formation-card mat-card-header button {
+    align-self: flex-end;
+    margin-top: -48px;
+  }
+}
+
+/* Snackbar styles */
+.success-snackbar {
+  background-color: #4caf50;
+  color: white;
+}
+
+.error-snackbar {
+  background-color: #f44336;
+  color: white;
+}
+
+.warning-snackbar {
+  background-color: #ff9800;
+  color: white;
+}
+
+
+
+
+// ----------------------- Experiences-----------
+.experience-card {
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #3f51b5;
+
+  mat-card-header {
+    align-items: flex-start;
+    mat-card-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    mat-card-subtitle {
+      margin-top: 0.25rem;
+      color: #555;
+    }
+  }
+
+  mat-card-content {
+    p {
+      margin: 0.5rem 0;
+      line-height: 1.5;
+    }
+
+    strong {
+      color: #333;
+    }
+  }
+}// ----------------------- End-Experiences-----------
+
+
+
+// ----------------------- Certification-----------
+.certification-card {
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #4caf50;
+
+  mat-card-header {
+    align-items: flex-start;
+
+    mat-card-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    mat-card-subtitle {
+      margin-top: 0.25rem;
+      color: #555;
+    }
+  }
+
+  .certification-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+
+    div {
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      color: #333;
+    }
+
+    a {
+      color: #3f51b5;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}  // -----------------------End-Certification-----------
+
+
+
+// ----------------------- Tech-Skills-----------
+/* Tech Skills Step */
+.step-content {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  h3 {
+    color: #3f51b5;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+/* Form Styles */
+.tech-skill-form {
+  margin-bottom: 1.5rem;
+
+  .form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .form-field {
+      flex: 1;
+    }
+  }
+
+  mat-checkbox {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skill-card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  mat-card-header {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+
+    mat-icon[color="primary"] {
+      color: #4caf50;
+    }
+  }
+
+  mat-card-content {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}  // ----------------------- End-Tech-Skills-----------
+
+
+// ----------------------- Soft-Skills-----------
+/* Soft Skills Specific Styles */
+.soft-skill-form {
+  margin-bottom: 1.5rem;
+
+  .form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .form-field {
+      flex: 1;
+    }
+  }
+}
+
+/* Skills Grid - Shared with Tech Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skill-card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  mat-card-header {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: center;
+  }
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+
+  button {
+    min-width: 120px;
+  }
+}  // ----------------------- End-Soft-Skills-----------
+
+
+// ----------------------- Language-----------
+/* Languages Step */
+.language-form {
+  background-color: #f5f7fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.languages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.language-card {
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  mat-card-header {
+    padding: 16px;
+    border-bottom: 1px solid #eeeeee;
+
+    mat-card-title {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    mat-card-subtitle {
+      font-size: 14px;
+      color: #616161;
+    }
+  }
+
+  mat-card-content {
+    padding: 16px;
+
+    .language-details {
+      div {
+        margin-bottom: 8px;
+        font-size: 14px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        color: #3f51b5;
+        text-decoration: none;
+
+        mat-icon {
+          margin-right: 8px;
+          font-size: 18px;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .languages-grid {
+    grid-template-columns: 1fr;
+  }
+}// ----------------------- End-Language-----------
+
+
+::ng-deep .mat-form-field-disabled .mat-form-field-outline {
+  background-color: transparent !important;
+}
+
+
+
+
+// ----------------------- -Verification-----------
+.verification-status {
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  mat-icon, mat-spinner {
+    flex-shrink: 0;
+  }
+
+  &.verifying {
+    background-color: rgba(33, 150, 243, 0.1); // Light blue
+    color: #2196F3;
+  }
+
+  &.verified {
+    background-color: rgba(76, 175, 80, 0.1); // Light green
+    color: #4CAF50;
+  }
+
+  &.not-verified {
+    background-color: rgba(255, 152, 0, 0.1); // Light orange
+    color: #FF9800;
+  }
+}

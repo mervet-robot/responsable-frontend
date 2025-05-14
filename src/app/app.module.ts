@@ -11,7 +11,7 @@ import { SidebarComponent } from './core/layout/sidebar/sidebar.component';
 import { ProfileComponent } from './features/profile/profile.component';
 import { ProjectsComponent } from './features/projects/projects.component';
 import { CertificationsComponent } from './features/certifications/certifications.component';
-import {CommonModule} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
@@ -30,6 +30,14 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
+import {MatChip, MatChipListbox, MatChipsModule} from '@angular/material/chips';
+import {MatCheckbox} from '@angular/material/checkbox';
+import {MatAutocomplete, MatAutocompleteModule, MatAutocompleteTrigger} from '@angular/material/autocomplete';
+import {MatProgressBar} from '@angular/material/progress-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatOptionModule } from '@angular/material/core';
+import {BioCorrectionDialogComponent} from './features/bio-correction-dialog/bio-correction-dialog.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +50,8 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
     ProfileComponent,
     ProjectsComponent,
     CertificationsComponent,
-    DashboardComponent
+    DashboardComponent,
+    BioCorrectionDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +72,7 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
     MatMenuModule,
     MatTableModule,
 
-
+    MatDialogModule,
 
     HttpClientModule,
     BrowserAnimationsModule,
@@ -71,7 +80,28 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
     MatDividerModule,
     MatListModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressBar,
+    MatChipListbox,
+    MatChip,
+    MatCheckbox,
+    MatAutocompleteTrigger,
+    MatAutocomplete,
+
+    MatChipsModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatIconModule,
+
+
+    MatFormFieldModule,
+
+    MatSelectModule,
+    MatOptionModule,
+    MatInputModule,
+
+    MatButtonToggleModule,
+    NgOptimizedImage
 
 
   ],

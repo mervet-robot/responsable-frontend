@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" routerLink="/">
+  <button mat-icon-button class="example-icon" routerLink="/dashboard">
     <mat-icon>home</mat-icon>
   </button>
   <span>WEB4JOBS Portfolio</span>
@@ -12,8 +12,8 @@
 
   <ng-container *ngIf="isLoggedIn">
     <button mat-button routerLink="/profile">My Profile</button>
-    <button mat-button routerLink="/projects">Projects</button>
-    <button mat-button routerLink="/certifications">Certifications</button>
+    <button mat-button routerLink="/dashboard">dashboard</button>
+
 
     <button mat-button [matMenuTriggerFor]="userMenu">
       {{ username }}

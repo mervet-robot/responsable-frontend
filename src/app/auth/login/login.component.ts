@@ -15,7 +15,11 @@ export class LoginComponent implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
+  successMessage = '';
   roles: string[] = [];
+  showRoleMessage = false;
+  unauthorizedRoleMessage = '';
+  isNotRegistered = false;
 
   constructor(
     private authService: AuthService,
@@ -42,6 +46,7 @@ export class LoginComponent implements OnInit {
     }
 
     const { username, password } = this.loginForm.value;
+    this.isNotRegistered = false;
 
     this.authService.login({ username, password }).subscribe({
       next: data => {
@@ -51,21 +56,69 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = [data.role];
-        this.redirectBasedOnRole(data.role);
+        this.unauthorizedRoleMessage = '';
+        this.isNotRegistered = false;
+
+        this.showRoleBasedMessage(data.role);
+
+        if (![ 'RESPONSABLE', 'DIRECTEUR'].includes(data.role)) {
+          this.tokenService.signOut();
+          this.isLoggedIn = false;
+          return;
+        }
+
+        setTimeout(() => {
+          this.redirectBasedOnRole(data.role);
+        }, 2000);
       },
       error: err => {
-        this.errorMessage = err.error.message || 'Login failed';
+        if (err.status === 401) {
+          this.errorMessage = 'Invalid username or password';
+          this.isNotRegistered = true;
+        } else if (err.status === 404) {
+          this.errorMessage = 'Account not found. Please register first.';
+          this.isNotRegistered = true;
+        } else {
+          this.errorMessage = err.error.message || 'Login failed';
+        }
         this.isLoginFailed = true;
       }
     });
   }
 
+  private showRoleBasedMessage(role: string): void {
+    this.showRoleMessage = true;
+
+    switch(role) {
+
+      case 'RECRUTEUR':
+        this.successMessage = 'Login successful as RECRUTEUR';
+        break;
+      case 'RESPONSABLE':
+        this.successMessage = 'Login successful as RESPONSABLE';
+        break;
+      case 'DIRECTEUR':
+        this.successMessage = 'Login successful as DIRECTEUR';
+        break;
+      // case 'USER':
+      //   this.errorMessage = 'Sorry, you are still an USER. You should register again to benefit from this service.';
+      //   this.tokenService.signOut();
+      //   this.isLoginFailed = true;
+      //   this.isLoggedIn = false;
+      //   break;
+      default:
+        this.unauthorizedRoleMessage = 'Vous n\'êtes pas inscrit au programme. Vous devez d\'abord vous inscrire en tant qu\'apprenant pour profiter de ce service.';
+        this.isLoginFailed = true;
+    }
+  }
+
+
   redirectBasedOnRole(role: string): void {
     switch (role) {
       // case 'APPRENANT':
-      case 'RECRUTEUR':
-        this.router.navigateByUrl("/profile");
-        break;
+      // case 'RECRUTEUR':
+      //   this.router.navigateByUrl("/profile");
+      //   break;
       case 'RESPONSABLE':
         this.router.navigate(['/profile']);
         break;
