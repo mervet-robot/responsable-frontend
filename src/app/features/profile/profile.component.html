@@ -1,0 +1,57 @@
+<div class="profile-container">
+  <mat-card>
+    <mat-card-header>
+      <div class="profile-header">
+        <div class="profile-avatar">
+          <img src="assets/default-avatar.png" alt="Profile Image">
+        </div>
+        <div class="profile-info">
+          <h2>{{ currentUser.username }}</h2>
+          <p>{{ currentUser.email }}</p>
+          <p>Role: {{ currentUser.role }}</p>
+        </div>
+      </div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-tab-group>
+        <mat-tab label="About">
+          <div class="tab-content">
+            <h3>Personal Information</h3>
+            <p>First Name: {{ currentUser.firstName || 'Not specified' }}</p>
+            <p>Last Name: {{ currentUser.lastName || 'Not specified' }}</p>
+            <p>Bio: Not specified</p>
+
+            <mat-divider></mat-divider>
+
+            <h3>Contact Information</h3>
+            <p>Email: {{ currentUser.email }}</p>
+            <p>Phone: Not specified</p>
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Projects">
+          <div class="tab-content">
+            <h3>My Projects</h3>
+            <p *ngIf="true">No projects found.</p>
+
+            <button mat-raised-button color="primary">Add New Project</button>
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Certifications">
+          <div class="tab-content">
+            <h3>My Certifications</h3>
+            <p *ngIf="true">No certifications found.</p>
+
+            <button mat-raised-button color="primary">Add New Certification</button>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary">Edit Profile</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
